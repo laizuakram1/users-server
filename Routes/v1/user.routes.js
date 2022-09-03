@@ -35,4 +35,9 @@ routes
   
   .post(userControllers.saveAUsers);
 
+  routes
+    .route('/:id')
+    
+    .put(userControllers.updateAUser)
+
 module.exports=routes;
