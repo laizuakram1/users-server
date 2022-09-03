@@ -6,7 +6,7 @@ const routes = express.Router();
 routes
   .route('/')
   /**
-   * @api {get} /all
+   * @api {get} (/) if use query like: /?limit=number&page=number you can see limited data with limited page 
    * @apiDescription Get all users
    * @apiPermission admin
    *
@@ -37,7 +37,36 @@ routes
 
   routes
     .route('/:id')
-    
+     /**
+   * @api {put} (/:id) update a user with id
+   * @apiDescription update a user field or whole information
+   * @apiPermission admin
+   *
+   * @apiHeader {String} Authorization   not avilable
+   *
+   * @apiSuccess {Object[]} id sprecific users object
+   *
+   * @apiError  (not found 404) 
+   * @apiError (Forbidden 403)    not available cs kon't use jwt
+   */
+  
+
     .put(userControllers.updateAUser)
+
+      /**
+   * @api {delete} (/:id) delete a user with id
+   * @apiDescription delete a user from users data using id
+   * @apiPermission admin
+   *
+   * @apiHeader {String} Authorization   not avilable
+   *
+   * @apiSuccess {Object[]} without deleted id object
+   *
+   * @apiError  (not found 404) 
+   * @apiError (Forbidden 403)    not available cs kon't use jwt
+   */
+  
+
+    .delete(userControllers.deleteAUser)
 
 module.exports=routes;

@@ -27,11 +27,9 @@ let users = [
     
   ];
 
-
   module.exports.getAllUsers = (req, res, next) => {
-    // const { limit, page } = req.query;
-    // console.log(limit, page);
-    res.json(users);
+    const { limit, page } = req.query;
+    res.json(users.slice(0, limit));
   };
 
   module.exports.saveAUsers = (req, res, next)=>{
@@ -51,4 +49,12 @@ let users = [
 
     res.send(updateData);
     
+  }
+
+  module.exports.deleteAUser = (req, res) =>{
+    const {id} = req.params;
+  
+    const result = users.filter(user => user.id !== Number(id));
+    res.send(result);
+
   }
