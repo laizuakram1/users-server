@@ -11,3 +11,11 @@ let users = [
     // console.log(limit, page);
     res.json(users);
   };
+
+  module.exports.saveAUsers = (req, res, next)=>{
+    const data = req.body;
+    users.push(data);
+    
+    res.send(users);
+    
+  }
