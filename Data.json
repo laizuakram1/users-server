@@ -1,0 +1,26 @@
+[
+    {
+        "id":1,
+        "name":"John",
+        "Address":"USA",
+        "contact":"john@gmail.com",
+        "genger":"male",
+        "photoUrl":"https://i.ibb.co/LCFhKYm/player-1.png"
+    },
+    {
+        "id":2,
+        "name":"Hitlar",
+        "Address":"USA",
+        "contact":"john@gmail.com",
+        "genger":"male",
+        "photoUrl":"https://i.ibb.co/LCFhKYm/player-1.png"
+    },
+    {
+        "id":3,
+        "name":"Jenny",
+        "Address":"USA",
+        "contact":"john@gmail.com",
+        "genger":"male",
+        "photoUrl":"https://i.ibb.co/LCFhKYm/player-1.png"
+    }
+]
