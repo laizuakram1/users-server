@@ -1,32 +1,33 @@
 
-let users = [
-  {
-    "id": 1,
-    "name": "laizu",
-    "gender": "male",
-    "contact": "laizu@gmail.com",
-    "address": "bangladesh",
-    "photoUrl": "https://i.ibb.co/DbdjNHm/main.jpg"
-  },
-  {
-    "id": 2,
-    "name": "John",
-    "gender": "male",
-    "contact": "john@gmail.com",
-    "address": "USA",
-    "photoUrl": "https://i.ibb.co/DbdjNHm/main.jpg"
-  },
-  {
-    "id": 3,
-    "name": "Kim",
-    "gender": "male",
-    "contact": "kim@gmail.com",
-    "address": "korea",
-    "photoUrl": "https://i.ibb.co/DbdjNHm/main.jpg"
-  },
+// let users = [
+//   {
+//     "id": 1,
+//     "name": "laizu",
+//     "gender": "male",
+//     "contact": "laizu@gmail.com",
+//     "address": "bangladesh",
+//     "photoUrl": "https://i.ibb.co/DbdjNHm/main.jpg"
+//   },
+//   {
+//     "id": 2,
+//     "name": "John",
+//     "gender": "male",
+//     "contact": "john@gmail.com",
+//     "address": "USA",
+//     "photoUrl": "https://i.ibb.co/DbdjNHm/main.jpg"
+//   },
+//   {
+//     "id": 3,
+//     "name": "Kim",
+//     "gender": "male",
+//     "contact": "kim@gmail.com",
+//     "address": "korea",
+//     "photoUrl": "https://i.ibb.co/DbdjNHm/main.jpg"
+//   },
 
-];
+// ];
 
+let users = require('./../Data.json');
 
 
 module.exports.getAllUsers = (req, res, next) => {
