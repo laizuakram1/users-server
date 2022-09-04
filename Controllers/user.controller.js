@@ -16,9 +16,14 @@ module.exports.randomUsers = (req, res)=>{
 
 module.exports.saveAUsers = (req, res, next) => {
   const data = req.body;
-    users.push(data);
+if(!data.name || data.name == " "){
+  res.send('users name missing')
+}else{
+  users.push(data);
 
-    res.send(users);
+  res.send(users);
+}
+   
   
 
 };
