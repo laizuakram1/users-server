@@ -1,31 +1,4 @@
 
-// let users = [
-//   {
-//     "id": 1,
-//     "name": "laizu",
-//     "gender": "male",
-//     "contact": "laizu@gmail.com",
-//     "address": "bangladesh",
-//     "photoUrl": "https://i.ibb.co/DbdjNHm/main.jpg"
-//   },
-//   {
-//     "id": 2,
-//     "name": "John",
-//     "gender": "male",
-//     "contact": "john@gmail.com",
-//     "address": "USA",
-//     "photoUrl": "https://i.ibb.co/DbdjNHm/main.jpg"
-//   },
-//   {
-//     "id": 3,
-//     "name": "Kim",
-//     "gender": "male",
-//     "contact": "kim@gmail.com",
-//     "address": "korea",
-//     "photoUrl": "https://i.ibb.co/DbdjNHm/main.jpg"
-//   },
-
-// ];
 
 let users = require('../Data.json');
 
@@ -35,23 +8,41 @@ module.exports.getAllUsers = (req, res, next) => {
   res.json(users.slice(0, limit));
 };
 
+module.exports.randomUsers = (req, res) => {
+  const random = users[Math.floor(Math.random() * users.length)];
+
+  res.send(random);
+}
+
 module.exports.saveAUsers = (req, res, next) => {
   const data = req.body;
+  if (!data.name || data.name == " ") {
+    res.send('users name missing')
+  } else {
     users.push(data);
 
     res.send(users);
-  
+  }
+
+
 
 };
 
 module.exports.updateAUser = (req, res) => {
   const { id } = req.params;
+  const address = req.body.address;
 
-  const updateData = users.find(user => user.id === Number(id));
-  updateData.id = id;
-  updateData.address = req.body.address;
+  if (! address) {
+    res.send('address is missing in body')
+  } else {
+    const updateData = users.find(user => user.id === Number(id));
+    updateData.id = id;
+    updateData.address = address;
 
-  res.send(updateData);
+    res.send(updateData);
+  }
+
+
 
 }
 

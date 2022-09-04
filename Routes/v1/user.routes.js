@@ -4,9 +4,9 @@ const userControllers = require('./../../Controllers/user.controller');
 const routes = express.Router();
 
 routes
-  .route('/')
+  .route('/all')
   /**
-   * @api {get} (/) if use query like: /?limit=number&page=number you can see limited data with limited page 
+   * @api get (/all) if use query like: /?limit=number&page=number you can see limited data with limited page 
    * @apiDescription Get all users
    * @apiPermission admin
    *
@@ -20,7 +20,7 @@ routes
    */
   .get(userControllers.getAllUsers)
    /**
-   * @api {post} / post a users
+   * @api (/all)
    * @apiDescription post a user data
    * @apiPermission admin
    *
@@ -67,6 +67,7 @@ routes
    */
   
 
-    .delete(userControllers.deleteAUser)
+    .delete(userControllers.deleteAUser);
+    routes.route('/random').get(userControllers.randomUsers);
 
 module.exports=routes;
