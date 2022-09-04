@@ -39,7 +39,7 @@ routes
     .route('/:id')
      /**
    * @api {put} (/:id) update a user with id
-   * @apiDescription update a user field or whole information
+   * @apiDescription update a user address property. set new address to send req body address and property value
    * @apiPermission admin
    *
    * @apiHeader {String} Authorization   not avilable

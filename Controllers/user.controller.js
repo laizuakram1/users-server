@@ -27,6 +27,8 @@ let users = [
     
   ];
 
+
+
   module.exports.getAllUsers = (req, res, next) => {
     const { limit, page } = req.query;
     res.json(users.slice(0, limit));
@@ -43,7 +45,7 @@ let users = [
   module.exports.updateAUser = (req, res) =>{
     const {id} = req.params;
   
-    const updateData = users.find(user => user.id == id);
+    const updateData = users.find(user => user.id === Number(id));
     updateData.id = id;
     updateData.address = req.body.address;
 
