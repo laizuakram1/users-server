@@ -27,7 +27,7 @@
 
 // ];
 
-let users = require('./../Data.json');
+let users = require('../Data.json');
 
 
 module.exports.getAllUsers = (req, res, next) => {
